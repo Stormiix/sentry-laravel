@@ -86,7 +86,7 @@ class SentryLaravelServiceProvider extends ServiceProvider
             $client = SentryLaravel::getClient(array_merge(array(
                 'environment' => $app->environment(),
                 'prefixes' => array(base_path()),
-                'app_path' => app_path(),
+                'app_path' => app()->path();,
             ), $user_config));
 
             if (isset($user_config['user_context']) && $user_config['user_context'] !== false) {
